@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,217 @@
   to {
     transform: rotate(360deg);
   }
+}
+@media only screen and (max-width: 600px) {
+    .file-input{
+        /*left: 0 !important;*/
+    }
+
+}
+.top-header {
+    gap: 3px;
+    flex-wrap: wrap;
+}
+@media only screen and (min-width: 800px) {
+    .top-header {
+        position: relative;
+        height: 45px;
+        padding: 6px;
+        color: white;
+        clip-path: polygon(
+                0% 0%,
+                100% 0%,
+                100% 70%,
+                350px 70%,
+                340px 75%,
+                330px 86%,
+                320px 92%,
+                310px 94%,
+                300px 96%,
+                290px 98%,
+                280px 95%,
+                270px 70%,
+                170px 70%,
+                168px 70%,
+                165px 90%,
+                160px 96%,
+                135px 98%,
+                130px 95%,
+                120px 75%,
+                0px 75%
+        );
+        background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7));
+    }
+}
+@media only screen and (max-width: 800px) {
+    .top-header {
+        height: 140px;
+    }
+}
+ .cropper{
+     position: relative;
+     font-size: 0.8rem;
+ }
+ .cropper-filename{
+     text-overflow: ellipsis;
+     overflow: hidden;
+     max-width: 170px;
+ }
+.cropper-info{
+    position: absolute;
+    top: 37px;
+    z-index: 800;
+    right: 3px;
+    color: white;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+    padding: 3px;
+    border-radius: 3px;
+}
+.cropper-header{
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(122, 122, 122, 0.6), rgba(0,0,0,0.3));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2px;
+}
+.cropper-body{
+    display: flex;
+    gap: 5px;
+    margin: 3px 0;
+}
+.box-bg{
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.1));
+    padding: 3px;
+    border-radius: 3px;
+}
+.app-logo {
+  user-select: none;
+  margin-top: -7px;
+  font-family: 'Calligraffitti', cursive;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 0.3em;
+  text-align: center;
+  color: #F9f1cc;
+  text-shadow: 1px 1px 0px #FFB650,
+  1px 1px 0px #FFD662,
+  2px 2px 0px  #FF80BF,
+  3px 3px 0px #EF5097,
+  4px 4px 0px #6868AC,
+  5px 5px 0px #90B1E0;
+}
+
+.about-message{
+    color: cyan;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(0.97);
+        box-shadow: 0 0 0 0 rgba(203, 203, 203, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(203, 203, 203, 0);
+    }
+    100% {
+        transform: scale(0.97);
+        box-shadow: 0 0 0 0 rgba(203, 203, 203, 0);
+    }
+}
+.select-some-files {
+    color: wheat;
+    cursor: crosshair;
+    border: 1px rgba(255, 255, 255, 0.32) solid;
+    background: rgba(0, 0, 0, 0.38);
+    border-radius: 6px;
+    padding: 7px;
+    box-shadow: 0 0 0 0 rgb(203, 203, 203);
+    width: fit-content;
+    animation: pulse 3s infinite;
+}
+.select-some-files:hover{
+    color: #ffcdcd;
+    border: 1px #ff0000 solid;
+    background: #1e1e1e;
+    animation: pulse 1s infinite;
+}
+.exporter-settings {
+    color: #f8f8a1;
+    font-size: 0.8rem;
+    accent-color: #e74c3c;
+    user-select: none;
+}
+.export-button {
+    background: #3d646b;
+    color: #ffffff;
+}
+.export-button:hover {
+    background: #98e9ff;
+    color: black;
+}
+input, button, .button, select {
+    background: #3d3d3d;
+    color: white;
+    border: 1px solid rgba(107, 107, 107, 0.53);
+    border-radius: 3px;
+    height: 27px;
+}
+select {
+    background: #2c2c2c;
+}
+select:hover{
+    background: #464646;
+}
+input:hover,
+button:hover,
+.button:hover {
+    border: 1px solid #6b6b6b;
+    background: #676767;
+}
+input {
+    border: none;
+    background: none;
+}
+.checkbox {
+    background: black;
+    border: solid 1px #000000;
+    border-radius: 3px;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    align-items: center;
+}
+.checkbox:hover {
+    border: solid 1px red;
+    background: #3d3d3d;
+}
+.checkbox:has(input:checked){
+    color: black !important;
+    background: #b9b39d;
+}
+.checkbox:has(input:checked):hover{
+    border: solid 1px #000000;
+    background: #e3d8a3;
+}
+.checkbox > input {
+    display: none;
+}
+.circle-button{
+    background: none;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+.circle-button:hover{
+    background: black;
+    border: 1px solid white;
 }

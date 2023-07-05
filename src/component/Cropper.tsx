@@ -1,75 +1,82 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect, useMemo} from "react";
 import ReactCrop from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
 
 interface Props {
-  imageToCrop: any;
-  croppedImage: any;
+  cropSize: any;
+  file: any;
+  index: number;
+  onSetCropped: any
+  onRemoveImage: any
+  crops: any
+  setCrops: any
+  keepRatio: any
 }
 
-const Cropper: React.FC<Props> = ({ imageToCrop, croppedImage }) => {
-  const [crop, setCrop] = useState<any>({
-    maxHeight: 800,
-    maxWidth: 400
-  });
-  const [image, setImage] = useState<any>(null);
+const Cropper: React.FC<Props> = ({  crops, setCrops, cropSize, file, index, onSetCropped, onRemoveImage, keepRatio }) => {
+  const crop = crops[index];
+  const onSetCrops = (newCropSize: any = null) => {
+    if(newCropSize == null) return;
+    setCrops((prev:any)=> {
 
-  const cropImageNow = () => {
-    if (!crop || !image) return;
-    const canvas = document.createElement("canvas");
-    const scaleX = image.naturalWidth / image.width;
-    const scaleY = image.naturalHeight / image.height;
-    canvas.width = crop.width;
-    canvas.height = crop.height;
-    const ctx: any = canvas.getContext("2d");
+      return {...prev, [index]: {...prev[index], ...newCropSize, ...(keepRatio ? {aspect: 1} : {aspect: undefined})},
+      }
+    })
+  }
 
-    const pixelRatio = window.devicePixelRatio;
-    canvas.width = crop.width * pixelRatio;
-    canvas.height = crop.height * pixelRatio;
-    ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-    ctx.imageSmoothingQuality = "high";
+  const imageToCrop= useMemo(()=>URL.createObjectURL(file), [file?.name])
+  const croppedImage=(value: any) => onSetCropped(index, value)
 
-    ctx.drawImage(
-      image,
-      crop.x * scaleX,
-      crop.y * scaleY,
-      crop.width * scaleX,
-      crop.height * scaleY,
-      0,
-      0,
-      crop.width,
-      crop.height
-    );
+  useEffect(()=>{
+    // remove crop on unmount
+    return () => {
+      setCrops((prev:any)=> {
+        const newValue = {...prev}
+        if (newValue[index]) delete newValue[index]
+        return newValue;
+      })
+    }
+  }, [])
 
-    const base64Image = canvas.toDataURL("image/jpeg");
-    croppedImage(base64Image);
-  };
+  useEffect(()=>{
+    if(cropSize != null){
+      onSetCrops(cropSize)
+      console.log("set initial crop to", {cropSize})
+    }
+  }, [])
 
-  useEffect(() => {
-    if (crop && image) cropImageNow();
-  }, [crop, image]);
+  const onSetCurrentCropSize =()=> onSetCrops(cropSize);
 
+  const onImageLoaded = (loadedImage: any) => {
+    setCrops((prev:any)=> {
+      return {...prev, [index]: {...prev[index], image: loadedImage, name: file?.name, ...(cropSize ?? {})},
+      }
+    })
+  }
+
+  const cropperInfo = crop ? `W:${crop.width} H:${crop.height}  x:${crop.x} y:${crop.y}`: "";
   return (
-    <div>
-      <div>
-        {imageToCrop && (
-          <div title={crop.maxWidth}>
-            <ReactCrop
-              src={imageToCrop}
-              onImageLoaded={setImage}
-              maxHeight={400}
-              maxWidth={400}
-              crop={crop}
-              onChange={setCrop}
-            />
-            <br />
-            {/* <button onClick={cropImageNow}>Crop</button> */}
-            {/* <br /> */}
-            {/* <br /> */}
+      <div style={{borderRadius: "0.5rem", overflow: "hidden",
+        flexShrink: 0,
+      }} className="cropper"
+           title={file?.name}
+      >
+        <div className="cropper-header">
+          <div className="cropper-filename">{file?.name}</div>
+          {crop != null && <div className="cropper-info" title={cropperInfo}>{cropperInfo}</div>}
+          <div className="cropper-body">
+            {cropSize != null && <button onClick={onSetCurrentCropSize}>Set to {cropSize.width}x{cropSize.height}</button>}
+            <button className="circle-button" onClick={()=>onRemoveImage(index)}>X</button>
           </div>
-        )}
+        </div>
+            <ReactCrop
+                key={file?.name}
+                src={imageToCrop}
+                onImageLoaded={onImageLoaded}
+                crop={crop}
+                onChange={onSetCrops}
+            />
       </div>
-    </div>
   );
 };
 
