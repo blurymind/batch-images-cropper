@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/batch-images-cropper/static/css/main.6ca42c14.css",
+    "main.js": "/batch-images-cropper/static/js/main.5555b3bd.js",
+    "static/js/787.b7388509.chunk.js": "/batch-images-cropper/static/js/787.b7388509.chunk.js",
+    "service-worker.js": "/batch-images-cropper/service-worker.js",
+    "index.html": "/batch-images-cropper/index.html",
+    "main.6ca42c14.css.map": "/batch-images-cropper/static/css/main.6ca42c14.css.map",
+    "main.5555b3bd.js.map": "/batch-images-cropper/static/js/main.5555b3bd.js.map",
+    "787.b7388509.chunk.js.map": "/batch-images-cropper/static/js/787.b7388509.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ca42c14.css",
+    "static/js/main.5555b3bd.js"
+  ]
+}
