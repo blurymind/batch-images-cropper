@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/batch-images-cropper/static/css/main.87f2312d.css",
-    "main.js": "/batch-images-cropper/static/js/main.56f53348.js",
-    "static/js/787.87477907.chunk.js": "/batch-images-cropper/static/js/787.87477907.chunk.js",
+    "main.js": "/batch-images-cropper/static/js/main.7022501b.js",
+    "static/js/787.e4fb1a0b.chunk.js": "/batch-images-cropper/static/js/787.e4fb1a0b.chunk.js",
     "service-worker.js": "/batch-images-cropper/service-worker.js",
     "index.html": "/batch-images-cropper/index.html",
     "main.87f2312d.css.map": "/batch-images-cropper/static/css/main.87f2312d.css.map",
-    "main.56f53348.js.map": "/batch-images-cropper/static/js/main.56f53348.js.map",
-    "787.87477907.chunk.js.map": "/batch-images-cropper/static/js/787.87477907.chunk.js.map"
+    "main.7022501b.js.map": "/batch-images-cropper/static/js/main.7022501b.js.map",
+    "787.e4fb1a0b.chunk.js.map": "/batch-images-cropper/static/js/787.e4fb1a0b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.87f2312d.css",
-    "static/js/main.56f53348.js"
+    "static/js/main.7022501b.js"
   ]
 }
