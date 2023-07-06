@@ -1,7 +1,9 @@
 {
-  "name": "image-cropper",
+  "name": "batch-images-cropper",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://blurymind.github.io/batch-images-cropper",
+  "main": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -35,7 +37,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "rm -rf node_modules/.cache/gh-pages && yarn build",
+    "deploy": "rm -rf node_modules/.cache/gh-pages && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -56,5 +60,8 @@
     ]
   },
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
 }

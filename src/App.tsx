@@ -12,24 +12,26 @@ const aboutText = `Created by Todor Imreorov aka blurymind@github --
 `
 
 const App: React.FC  = () => {
-  return (
-      <Router>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route path="/about" element={<AboutPage appName={appName} aboutText={aboutText} />} />
-          <Route path="/" element={<Main appName={appName} aboutText={aboutText} />} />
-        </Routes>
-    </Router>
-  )
+    return <Main appName={appName} aboutText={aboutText} />
+    // todo pwa routing - maybe someday
+  // return (
+  //     <Router>
+  //       <nav>
+  //         {/*<ul>*/}
+  //         {/*  <li>*/}
+  //         {/*    <Link to="/">Home</Link>*/}
+  //         {/*  </li>*/}
+  //         {/*  <li>*/}
+  //         {/*    <Link to="/about">About</Link>*/}
+  //         {/*  </li>*/}
+  //         {/*</ul>*/}
+  //       </nav>
+  //       <Routes>
+  //         <Route index path="/about" element={<AboutPage appName={appName} aboutText={aboutText} />} />
+  //         <Route path="/" element={<Main appName={appName} aboutText={aboutText} />} />
+  //       </Routes>
+  //   </Router>
+  // )
 }
 
 export default App;

@@ -171,7 +171,6 @@ function Main({ appName, aboutText } :any) {
 
             </>
         </div>
-
     );
 }
 
