@@ -17,6 +17,6 @@ alt="Images cropper web app"  height="480" border="10" /></a>
 - Various crop size presets that can be applied on all or specific images
 
   <a href="https://blurymind.github.io/batch-images-cropper"><img src="https://raw.githubusercontent.com/blurymind/batch-images-cropper/main/cropper-demo.gif"
-alt="Images cropper web app"  height="480" border="10" /></a>
+alt="Images cropper web app" border="10" /></a>
 <a href="https://blurymind.github.io/batch-images-cropper"><img src="https://raw.githubusercontent.com/blurymind/batch-images-cropper/main/cropper-result.PNG"
 alt="Images cropper web app"  height="280" border="10" /></a>
