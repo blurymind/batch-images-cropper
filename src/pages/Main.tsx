@@ -103,7 +103,7 @@ function Main({ appName, aboutText } :any) {
                 <div style={{display: "flex", justifyContent: "space-between", gap: 6, position: "relative"}}>
                     {files.length > 0 && (
                         <>
-                            <div className="app-logo" title={appName + aboutText}>{appName}</div>
+                            {/*<div className="app-logo" title={appName + aboutText}>{appName}</div>*/}
                             <div title={files.length + " files"}>{files.length} files</div>
                             <button onClick={onSelectSomeFiles} className="button">Add</button>
                         </>
