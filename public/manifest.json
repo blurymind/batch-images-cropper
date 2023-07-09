@@ -1,6 +1,6 @@
 {
   "short_name": "Images Cropper",
-  "name": "Simple app to batch crop images",
+  "name": "Images Cropper",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,5 +21,13 @@
   "start_url": "/batch-images-cropper/",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "scope": "/batch-images-cropper/",
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://blurymind.github.io/batch-images-cropper/manifest.json",
+      "id": "uk.batch-images-cropper.getinstalledrelatedapps"
+    }
+  ]
 }

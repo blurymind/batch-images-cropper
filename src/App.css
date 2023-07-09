@@ -149,10 +149,12 @@
 .about-message{
     color: cyan;
     max-width: 500px;
-    padding-top: 25%;
+    padding-top: calc(40vh - 140px);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 @keyframes pulse {
     0% {

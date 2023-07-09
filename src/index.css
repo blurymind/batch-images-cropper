@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.a2hsButton{
+  position: absolute;
+  top: 35px;
+  width: 200px;
+  height: 60px;
+}
