@@ -24,6 +24,13 @@ const Cropper: React.FC<Props> = ({  crops, setCrops, cropSize, file, index, onS
     })
   }
 
+  useEffect(()=>{
+    setCrops((prev:any)=> {
+      return {...prev, [index]: {...prev[index], ...(keepRatio ? {aspect: 1} : {aspect: undefined})},
+      }
+    })
+  }, [keepRatio])
+
   const imageToCrop= useMemo(()=>URL.createObjectURL(file), [file?.name])
   const croppedImage=(value: any) => onSetCropped(index, value)
 
