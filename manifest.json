@@ -26,7 +26,8 @@
   "related_applications": [
     {
       "platform": "webapp",
-      "url": "https://blurymind.github.io/batch-images-cropper/manifest.json"
+      "url": "https://blurymind.github.io/batch-images-cropper/manifest.json",
+      "id": "uk.batch-images-cropper.getinstalledrelatedapps"
     }
   ]
 }
